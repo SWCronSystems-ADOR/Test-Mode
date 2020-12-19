@@ -1,0 +1,97 @@
+* {
+    font-size: 1.2rem;
+}
+
+.selected {
+    transition: all 0.3s linear;
+    background-color: rgba(208,204,44, 1) !important;
+    outline: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.active {
+    transition: all 0.3s linear;
+    background-color: rgba(255, 0, 0, 0.8) !important;
+}
+
+.buttons {
+    border: none;
+    background-color: rgba(104,39,39, 0.8);
+    color: whitesmoke;
+    text-align: center;
+    margin: 0 0 2% 0;
+    padding: none;
+    height: 1.5rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+}
+
+.LeftSide {
+    width: 10%;
+    position: absolute;
+    top: 15%;
+    left: -20%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s linear;
+}
+
+.RightSide {
+    position: absolute;
+    top: 15%;
+    right: -20%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.5s linear;
+    width: 10%;
+}
+
+.hootersButton {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.showLeftSide {
+    transition: all 0.5s linear;
+    left: 1% !important;
+}
+
+.showRightSide {
+    transition: all 0.5s linear;
+    right: 1% !important;
+}
+
+
+#Master-Activator {
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s linear;
+}
+
+.openMaster-Activator {
+    top: 10% !important;
+    transition: all 0.5s linear;
+}
+
+.inactive {
+    background-color: gray !important;
+    pointer-events: none;
+    border: none;
+    color: whitesmoke;
+    text-align: center;
+    margin: 0 0 2% 0;
+    padding: none;
+    height: 1.5rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    outline: none;
+}
