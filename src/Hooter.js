@@ -31,6 +31,7 @@ export class Hooter extends Component {
     }
 
     componentDidMount = () => {
+      document.title = 'TEST MODE';
 
       window.addEventListener('beforeunload', this.componentCleaner);
 
@@ -91,22 +92,29 @@ export class Hooter extends Component {
             let svg = svgObjectTag.contentDocument;
             let hooters = svg.querySelectorAll(`#${this.selectedDevice.replace(/\s+/g, '')}`);
 
-
-            let i = 0;
-            while(i < hooters.length)
+            if(hooters)
             {
-              console.log(hooters[i])
-              console.log(hooters[i].children)
-              if(hooters[i] && hooters[i].children)
+              let i = 0;
+              while(i < hooters.length)
               {
-                for(let j = 0; j < hooters[i].children.length; j++)
+                console.log(hooters[i])
+                console.log(hooters[i].children)
+                if(hooters[i] && hooters[i].children)
                 {
-                  hooters[i].children[j].style.transition = "all 0.3s linear";
-                  hooters[i].children[j].setAttribute("fill", "rgba(208, 204, 44, 1)");
+                  for(let j = 0; j < hooters[i].children.length; j++)
+                  {
+                    hooters[i].children[j].style.transition = "all 0.3s linear";
+                    hooters[i].children[j].setAttribute("fill", "rgba(208, 204, 44, 1)");
+                  }
                 }
+                
+                i++;
               }
-              
-              i++;
+
+              if(!document.querySelector(`.Right-Panel`).classList.contains("showRightSide"))
+              {
+                document.querySelector(`.Right-Panel`).classList.add("showRightSide");
+              }
             }
 
 
